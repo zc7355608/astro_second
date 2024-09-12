@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting';
+const pageTitle = "主页";
+---
+<BaseLayout pageTitle={pageTitle}>
+  <h2>我超赞的博客副标题</h2>
+  <!-- 通过 client:load 指令告诉 Astro，在页面加载时将其中的 JavaScript 代码发送到客户端上，
+    使组件可交互。这称为给组件加水（Hydrate）-->
+  <Greeting client:load messages={["你好", "哈喽", "哇偶", "嗨"]} />
+</BaseLayout>
